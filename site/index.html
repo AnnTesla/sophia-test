@@ -85,14 +85,21 @@
            var annres = [];
             for (var anni=0;anni<annl;anni++) {
       
-             var annk = "label";
-            annres[anni]= {[anndata.globals['2016'[anni].predictedUsage],anndata.globals['2016'[anni].actualUsage]],{annk:anndata.globals['2016'[anni].salesforceId]]}};
-    
-      }
+             
+            annres[anni]= [anndata.globals['2016'[anni].predictedUsage],anndata.globals['2016'[anni].actualUsage]];
+           }
+
+           var anndatares = [];
+           var annl = "label";
+            for (var anni=0;anni<annl;anni++) {
+      
+              var annk = anndata.globals['2016'[anni].salesforceId];
+              anndatares[anni]= [ann[anni],annl:annk];
+            }
         });
 
 jQuery('#new-graph').tufteBar({
-          data: anndres,
+          data: anndatares,
           barLabel:  function(index) {
             amount = ($(this[0]).sum() * 10000).toFixed(0);
             return '$' + $.tufteBar.formatNumber(amount);

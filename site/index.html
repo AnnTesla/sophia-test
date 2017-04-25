@@ -83,7 +83,7 @@
         jQuery.getJSON('sophia-test.json', function(anndata){
            var annl = Object.keys(anndata).length/3;
            var annres = [];
-            for (var anni=0;anni<l;++anni) {
+            for (var anni=0;anni<l;anni++) {
       
              var annk = "label";
             annres[anni]= [anndata.globals[2016[anni].predictedUsage],anndata.globals[2016[anni].actualUsage]];

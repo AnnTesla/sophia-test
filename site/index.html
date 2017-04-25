@@ -80,6 +80,8 @@
           }
         });
 
+        var datausers = [];
+
         jQuery.getJSON('sophia-test.json', function(anndata){
            var annl = Object.keys(anndata).length/3;
            var annres = [];
@@ -96,10 +98,11 @@
               var annk = anndata.globals['2016'[anni].salesforceId];
               anndatares[anni]= [ann[anni],{annl:annk}];
             }
+            datausers = anndatares
         });
 
 jQuery('#new-graph').tufteBar({
-          data: anndatares,
+          data: anndausers,
           barLabel:  function(index) {
             amount = ($(this[0]).sum() * 10000).toFixed(0);
             return '$' + $.tufteBar.formatNumber(amount);

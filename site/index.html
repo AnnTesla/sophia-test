@@ -102,7 +102,7 @@
         });
 
 jQuery('#new-graph').tufteBar({
-          data: anndausers,
+          data: datausers,
           barLabel:  function(index) {
             amount = ($(this[0]).sum() * 10000).toFixed(0);
             return '$' + $.tufteBar.formatNumber(amount);

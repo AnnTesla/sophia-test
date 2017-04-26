@@ -132,8 +132,8 @@
             jQuery('#new-graph').tufteBar({
           data: anndatares,
           barLabel:  function(index) {
-            amount = ($(this[0]).sum() * 10000).toFixed(0);
-            return '$' + $.tufteBar.formatNumber(amount);
+            amount = ($(this[0][1]).sum()).toFixed(0);
+            return 'real' + $.tufteBar.formatNumber(amount);
           },
           axisLabel: function(index) { return this[1].label },
           legend: {

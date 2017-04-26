@@ -86,7 +86,7 @@
         var anndatares = [];
 
         jQuery.getJSON('new-sophia-test.json', function(anndata){
-           var l = Object.keys(anndata).length/3;
+           var l = Object.keys(anndata.globals.sixteenth).length;
            var annres = [];
             for (var i=0;i<l;i++) {
       
@@ -95,7 +95,7 @@
             // console.log(testdata);
            }
 
-           console.log(testdata);
+           //console.log(testdata);
            //alert ( anndata.domainY[1].name );
            //alert ( anndata.data[1].predictedUsage[2]);
            //alert ( anndata.globals.sixteenth[1].predictedUsage);

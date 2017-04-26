@@ -1,0 +1,29 @@
+ <script type="text/javascript">
+      $(document).ready(function () {
+        var anndatares = [];
+        jQuery.getJSON('new-sophia-test.json', function(anndata){
+           var l = anndata.globals.sixteenth.length;
+           var annres = [];
+            for (var i=0;i<l;i++) {
+             var testdata = anndata.globals.sixteenth[i].predictedUsage;
+            annres[i]= [anndata.globals.sixteenth[i].predictedUsage,anndata.globals.sixteenth[i].actualUsage];
+            // console.log(testdata);
+           }
+
+            for (var i=0;i<l;i++) {
+      
+              var annk = anndata.globals.sixteenth[i].salesforceId;
+              anndatares[i]= [annres[i],{label:anndata.globals.sixteenth[i].salesforceId}];
+
+            }
+            console.log(annres[1]);
+            console.log(anndatares[1]);
+            //alert (l);
+            alert (anndatares.length);
+
+        });
+
+        alert (anndatares.length);
+
+      });
+    </script>

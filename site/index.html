@@ -87,9 +87,9 @@
            var annres = [];
             for (var i=0;i<l;i++) {
       
-             
+             var testdata = anndata.globals['2016'[i].predictedUsage];
             annres[i]= [anndata.globals['2016'[i].predictedUsage],anndata.globals['2016'[i].actualUsage]];
-            console.log(anndata.globals['2016'[i].predictedUsage]);
+            console.log(testdata);
            }
 
            var anndatares = [];
@@ -97,7 +97,7 @@
             for (var i=0;i<l;i++) {
       
               var annk = anndata.globals['2016'[i].salesforceId];
-              anndatares[i]= [ann[i],{annl:annk}];
+              anndatares[i]= [annres[i],{annl:annk}];
 
             }
             //datausers = anndatares;

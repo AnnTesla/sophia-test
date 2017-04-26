@@ -87,12 +87,12 @@
            var annres = [];
             for (var i=0;i<l;i++) {
       
-             var testdata = anndata.globals['2016'[i].predictedUsage];
-            annres[i]= [anndata.globals['2016'[i].predictedUsage],anndata.globals['2016'[i].actualUsage]];
+             var testdata = anndata.globals.sixteenth[i].predictedUsage;
+            annres[i]= [anndata.globals.sixteenth[i].predictedUsage,anndata.globals.sixteenth[i].actualUsage];
             // console.log(testdata);
            }
 
-           console.log(anndata.globals['2016'[0].predictedUsage]);
+           console.log(testdata);
            alert ( anndata.domainY[1].name );
            alert ( anndata.data[1].predictedUsage[2]);
            alert ( anndata.globals.sixteenth[1].predictedUsage);
@@ -102,7 +102,7 @@
            var annl = "label";
             for (var i=0;i<l;i++) {
       
-              var annk = anndata.globals['2016'[i].salesforceId];
+              var annk = anndata.globals.sixteenth[i].salesforceId;
               anndatares[i]= [annres[i],{annl:annk}];
 
             }

@@ -91,7 +91,7 @@
             [[2.4, 0.9,  2.0], {label: '2007'}],
             [[1.5, 2.6, 0.45], {label: '2008'}]
           ];
-          alert (datausers.length);
+          //alert (datausers.length);
         jQuery('#stacked-graph').tufteBar({
           data: datausers,
           barLabel:  function(index) {
@@ -127,12 +127,12 @@
             console.log(annres[1]);
             console.log(anndatares[1]);
             //alert (l);
-            alert (anndatares.length);
+            //alert (anndatares.length);
 
             jQuery('#new-graph').tufteBar({
           data: anndatares,
           barLabel:  function(index) {
-            amount = ($(this[0][1]).sum()).toFixed(0);
+            amount = this[0][1];
             return 'real' + $.tufteBar.formatNumber(amount);
           },
           axisLabel: function(index) { return this[1].label },

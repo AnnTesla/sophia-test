@@ -129,12 +129,7 @@
             //alert (l);
             alert (anndatares.length);
 
-        });
-
-        alert ("script with graphs" + anndatares.length);
-
-
-jQuery('#new-graph').tufteBar({
+            jQuery('#new-graph').tufteBar({
           data: anndatares,
           barLabel:  function(index) {
             amount = ($(this[0]).sum() * 10000).toFixed(0);
@@ -145,6 +140,23 @@ jQuery('#new-graph').tufteBar({
             data: ["predictedUsage", "actualUsage"]
           }
         });
+
+        });
+
+        //alert ("script with graphs" + anndatares.length);
+
+
+// jQuery('#new-graph').tufteBar({
+//           data: anndatares,
+//           barLabel:  function(index) {
+//             amount = ($(this[0]).sum() * 10000).toFixed(0);
+//             return '$' + $.tufteBar.formatNumber(amount);
+//           },
+//           axisLabel: function(index) { return this[1].label },
+//           legend: {
+//             data: ["predictedUsage", "actualUsage"]
+//           }
+//         });
 
       });
     </script>

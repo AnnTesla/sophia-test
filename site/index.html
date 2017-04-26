@@ -43,21 +43,9 @@
       .sales { margin-left: 20px; }
       li { margin-bottom: 3px; }
     </style>
-<!-- 
-    <script type="text/javascript">
-    var anndatause = JSON.parse (overview.json);
-    var annl = Object.keys(datause).length/3;
-    var annres = [];
-    for (var anni=0;anni<l;++anni) {
-      
-             var annk = "label";
-        annres[anni]= [anndatause[predictedUsage],anndatause[actualUsage]];
-    
-      }
-   
-    </script> -->
 
-     <script type="text/javascript">
+
+    <!--  <script type="text/javascript">
       $(document).ready(function () {
         var anndatares = [];
         jQuery.getJSON('new-sophia-test.json', function(anndata){
@@ -89,7 +77,7 @@
         alert ("addit script outside" + " " + anndatares.length + " " + anndata.globals.sixteenth[i].predictedUsage);
 
       });
-    </script>
+    </script> -->
 
     <script type="text/javascript">
 
@@ -116,39 +104,32 @@
           }
         });
 
-        //var datausers = [];
-        //var anndatares = [];
+  
+        var anndatares = [];
 
-        // jQuery.getJSON('new-sophia-test.json', function(anndata){
-        //    var l = anndata.globals.sixteenth.length;
-        //    var annres = [];
-        //     for (var i=0;i<l;i++) {
+        jQuery.getJSON('new-sophia-test.json', function(anndata){
+           var l = anndata.globals.sixteenth.length;
+           var annres = [];
+            for (var i=0;i<l;i++) {
       
-        //      var testdata = anndata.globals.sixteenth[i].predictedUsage;
-        //     annres[i]= [anndata.globals.sixteenth[i].predictedUsage,anndata.globals.sixteenth[i].actualUsage];
-        //     // console.log(testdata);
-        //    }
-
-        //    //console.log(testdata);
-        //    //alert ( anndata.domainY[1].name );
-        //    //alert ( anndata.data[1].predictedUsage[2]);
-        //    //alert ( anndata.globals.sixteenth[1].predictedUsage);
-
-
-        //    //var anndatares = [];
-        //    //var annl = "label";
-        //     for (var i=0;i<l;i++) {
+             var testdata = anndata.globals.sixteenth[i].predictedUsage;
+            annres[i]= [anndata.globals.sixteenth[i].predictedUsage,anndata.globals.sixteenth[i].actualUsage];
+           }
+           //alert ( anndata.domainY[1].name );
+           //alert ( anndata.data[1].predictedUsage[2]);
+           //alert ( anndata.globals.sixteenth[1].predictedUsage);
+           //var anndatares = [];
+            for (var i=0;i<l;i++) {
       
-        //       var annk = anndata.globals.sixteenth[i].salesforceId;
-        //       anndatares[i]= [annres[i],{label:anndata.globals.sixteenth[i].salesforceId}];
+              var annk = anndata.globals.sixteenth[i].salesforceId;
+              anndatares[i]= [annres[i],{label:anndata.globals.sixteenth[i].salesforceId}];
+            }
+            console.log(annres[1]);
+            console.log(anndatares[1]);
+            //alert (l);
+            alert (anndatares.length);
 
-        //     }
-        //     console.log(annres[1]);
-        //     console.log(anndatares[1]);
-        //     //alert (l);
-        //     alert (anndatares.length);
-
-        // });
+        });
 
         alert ("script with graphs" + anndatares.length);
 

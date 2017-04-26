@@ -83,20 +83,22 @@
         var datausers = [];
 
         jQuery.getJSON('sophia-test.json', function(anndata){
-           var annl = Object.keys(anndata).length/3;
+           var l = Object.keys(anndata).length/3;
            var annres = [];
-            for (var anni=0;anni<annl;anni++) {
+            for (var i=0;i<l;i++) {
       
              
-            annres[anni]= [anndata.globals['2016'[anni].predictedUsage],anndata.globals['2016'[anni].actualUsage]];
+            annres[i]= [anndata.globals['2016'[i].predictedUsage],anndata.globals['2016'[i].actualUsage]];
+            console.log(anndata.globals['2016'[i].predictedUsage]);
            }
 
            var anndatares = [];
            var annl = "label";
-            for (var anni=0;anni<annl;anni++) {
+            for (var i=0;i<l;i++) {
       
-              var annk = anndata.globals['2016'[anni].salesforceId];
-              anndatares[anni]= [ann[anni],{annl:annk}];
+              var annk = anndata.globals['2016'[i].salesforceId];
+              anndatares[i]= [ann[anni],{annl:annk}];
+
             }
             //datausers = anndatares;
             console.log(annres);

@@ -99,11 +99,11 @@
 
 
            var anndatares = [];
-           var annl = "label";
+           //var annl = "label";
             for (var i=0;i<l;i++) {
       
               var annk = anndata.globals.sixteenth[i].salesforceId;
-              anndatares[i]= {annres[i],{annl:annk}};
+              anndatares[i]= [annres[i],{label:anndata.globals.sixteenth[i].salesforceId}];
 
             }
             //datausers = anndatares;
